@@ -1,4 +1,4 @@
-name: Dev action
+name: Debug action
 
 on:
   push:
