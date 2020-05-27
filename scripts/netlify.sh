@@ -17,7 +17,7 @@ echo "--------------------------------------------------"
 echo "2 - Load secrets"
 echo "--------------------------------------------------"
 
-secrethub inject -i secrethub.env -o .env
+secrethub inject --var env=$(APP_ENV) -i secrethub.env -o .env
 
 echo "--------------------------------------------------"
 echo "3 - Build"

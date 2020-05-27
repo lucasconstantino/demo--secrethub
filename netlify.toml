@@ -3,13 +3,13 @@
   command = "./scripts/netlify.sh"
 
 [context.production.environment]
-  SECRETHUB_ENV = "production"
+  APP_ENV = "production"
 
 [context.stage.environment]
-  SECRETHUB_ENV = "staging"
+  APP_ENV = "staging"
 
 [context.deploy-preview.environment]
-  SECRETHUB_ENV = "development"
+  APP_ENV = "development"
 
 [context.dev.environment]
-  SECRETHUB_ENV = "development"
+  APP_ENV = "development"
