@@ -1,18 +1,16 @@
 {
-  "name": "demo--secrethub",
+  "name": "netlify-secrethub",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:lucasconstantino/demo--secrethub.git",
+  "repository": "git@github.com:lucasconstantino/netlify-secrethub.git",
   "author": "Lucas Constantino Silva <lucasconstantinosilva@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "mkdir -p build && sed 's/{{ HELLO }}/'\"$HELLO\"'/g' index.html > build/index.html",
+    "build": "node ./scripts/build.js",
     "start": "yarn build && serve build"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "serve": "^11.3.0"
-  },
-  "dependencies": {
-    "@octokit/rest": "^17.9.0"
   }
 }
