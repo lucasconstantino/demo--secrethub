@@ -6,15 +6,18 @@ on:
       - dev
 
 jobs:
-  env:
-    FIRST: ${{ env.DEV_FIRST }}
-    SECOND: ${{ env.DEV_SECOND }}
-    THIRD: ${{ env.DEV_THIRD }}
   debug:
     runs-on: ubuntu-latest
     steps:
+      - name: Set env
+        uses: allenevans/set-env@v1.0.0
+        with:
+          FIRST: ${{ secrets.DEV_FIRST }}
+          SECOND: ${{ secrets.DEV_SECOND }}
+          THIRD: ${{ secrets.DEV_THIRD }}
+
       - name: Checkout
         uses: actions/checkout@master
 
       - name: Debug
-        uses: hmarr/debug-action
+        uses: hmarr/debug-action@master
