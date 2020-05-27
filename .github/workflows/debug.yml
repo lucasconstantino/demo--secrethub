@@ -9,12 +9,12 @@ jobs:
   debug:
     runs-on: ubuntu-latest
     steps:
-      - name: Set env
-        uses: allenevans/set-env@v1.0.0
-        with:
-          FIRST: ${{ secrets.DEV_FIRST }}
-          SECOND: ${{ secrets.DEV_SECOND }}
-          THIRD: ${{ secrets.DEV_THIRD }}
+      - uses: secrethub/actions/env-export@v0.1.0
+        env:
+          SECRETHUB_CREDENTIAL: ${{ secrets.SECRETHUB_CREDENTIAL }}
+          FIRST: secrethub://demo--strv/start/development/FIRST
+          SECOND: secrethub://demo--strv/start/development/SECOND
+          THIRD: secrethub://demo--strv/start/development/THIRD
 
       - name: Checkout
         uses: actions/checkout@master
