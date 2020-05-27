@@ -1,0 +1,15 @@
+[build]
+  publish = "build/"
+  command = "./scripts/netlify.sh"
+
+[context.production.environment]
+  SECRETHUB_ENV = "production"
+
+[context.stage.environment]
+  SECRETHUB_ENV = "staging"
+
+[context.deploy-preview.environment]
+  SECRETHUB_ENV = "development"
+
+[context.dev.environment]
+  SECRETHUB_ENV = "development"
