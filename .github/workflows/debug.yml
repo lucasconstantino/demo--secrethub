@@ -1,0 +1,20 @@
+name: Dev action
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  env:
+    FIRST: ${{ env.DEV_FIRST }}
+    SECOND: ${{ env.DEV_SECOND }}
+    THIRD: ${{ env.DEV_THIRD }}
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Debug
+        uses: hmarr/debug-action
